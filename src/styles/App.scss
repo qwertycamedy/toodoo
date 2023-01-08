@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url('../assets/fonts/Inter-Regular.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url('../assets/fonts/Inter-SemiBold.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url('../assets/fonts/Inter-Bold.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 700;
+}
+
+:root {
+  --bg: #394379;
+  --btn-bg: rgba(57, 67, 121, 0.5);
+  --shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  --white: #fff;
+  --red: #FF5858;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #root, .App {
+  height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 100%;
+    font-size: 600;
+    color: var(--white);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.App {
+  background: var(--bg);
+  padding-top: 92px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.barBtn {
+  background: rgba(46, 55, 103, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
