@@ -1,7 +1,7 @@
 import React from "react";
-import MyBtn from "./UI/btn/MyBtn";
+import MyBtn from "../UI/btn/MyBtn";
 import { BiUser } from "react-icons/bi";
-import cl from "../styles/header.module.scss";
+import cl from "../../styles/header.module.scss";
 
 const Header = () => {
   return (

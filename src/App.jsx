@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Header from './components/header/Header';
 import Main from './pages/Main';
 import './styles/App.scss';
 

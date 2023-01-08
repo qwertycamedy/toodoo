@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import cl from "../styles/bar.module.scss";
+import cl from "../../styles/bar.module.scss";
 import { BiSortAZ, BiSearch, BiAddToQueue } from "react-icons/bi";
-import MyBtn from "./UI/btn/MyBtn";
+import MyBtn from "../UI/btn/MyBtn";
 
 const Bar = () => {
   const [btns, setBtns] = useState([

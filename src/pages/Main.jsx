@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Bar from "../components/Bar";
-import Tasks from "../components/Tasks";
+import Bar from "../components/bar/Bar";
+import Tasks from "../components/tasks/Tasks";
 import cl from "../styles/main.module.scss";
 
 const Main = () => {
@@ -8,23 +8,17 @@ const Main = () => {
     {
       id: 1,
       title: "DayToDay",
-      task1: "",
-      task2: "",
-      task3: "",
+      isDone: true,
     },
     {
       id: 2,
       title: "Hello World",
-      task1: "",
-      task2: "",
-      task3: "",
+      isDone: false,
     },
     {
       id: 3,
       title: "GYMMMMMMMMMMMMMMM",
-      task1: "",
-      task2: "",
-      task3: "",
+      isDone: false,
     },
   ]);
   const [input, setInput] = useState("");
@@ -41,6 +35,16 @@ const Main = () => {
       setInput(e.target.value);
     }
   };
+  const toggleTodo = id => {
+    setTasks(
+      tasks.map(task => {
+        if (task.id === id) {
+          task.isDone = !task.isDone;
+        }
+        return task;
+      })
+    );
+  };
   const deleteTask = task => {
     setTasks(tasks.filter(t => t !== task));
   };
@@ -49,7 +53,11 @@ const Main = () => {
     <div className={cl.main}>
       <div className="container">
         <div className={cl.inner}>
-          <Tasks tasks={tasks} deleteTask={deleteTask} />
+          <Tasks
+            tasks={tasks}
+            toggleTodo={toggleTodo}
+            deleteTask={deleteTask}
+          />
           <Bar
             saveTodo={console.warn}
             onEnterDown={onEnterDown}

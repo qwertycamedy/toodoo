@@ -1,0 +1,32 @@
+.check {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    &Style {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform :translate(0,-50%);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid var(--white);
+    }
+
+    &:checked ~ &Style {
+        &:before {
+            content: '';
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--white);
+        }
+    }
+}
