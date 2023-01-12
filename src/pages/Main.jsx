@@ -21,21 +21,26 @@ const Main = () => {
       isDone: false,
     },
   ]);
-  const [input, setInput] = useState("");
+  const [addTaskInputVal, setAddTaskInputVal] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
   const addTask = () => {
-    let task = {
+    const newTask = {
       id: Date.now(),
-      title: input,
+      title: addTaskInputVal,
+      isDone: false,
     };
-    setTasks([...tasks], task);
+    setTasks([newTask, ...tasks]);
+    setAddTaskInputVal('');
+    console.log(tasks)
   };
-  const onEnterDown = e => {
-    if (e.key === "Enter") {
-      setInput(e.target.value);
-    }
+  const onAddTaskInputChange = e => {
+    setAddTaskInputVal(e.target.value);
   };
-  const toggleTodo = id => {
+
+  const toggleTask = id => {
     setTasks(
       tasks.map(task => {
         if (task.id === id) {
@@ -55,13 +60,16 @@ const Main = () => {
         <div className={cl.inner}>
           <Tasks
             tasks={tasks}
-            toggleTodo={toggleTodo}
+            toggleTask={toggleTask}
             deleteTask={deleteTask}
           />
           <Bar
-            saveTodo={console.warn}
-            onEnterDown={onEnterDown}
+            handleSubmit={handleSubmit}
+            tasks={tasks}
+            setTasks={setTasks}
             addTask={addTask}
+            addTaskInputVal={addTaskInputVal}
+            onAddTaskInputChange={onAddTaskInputChange}
           />
         </div>
       </div>

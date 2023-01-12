@@ -2,11 +2,11 @@ import React from "react";
 import cl from "../../styles/tasks.module.scss";
 import Task from "./Task";
 
-const Tasks = ({tasks, toggleTodo, deleteTask}) => {
+const Tasks = ({tasks, toggleTask, deleteTask}) => {
   return (
     <div className={cl.tasks}>
       {tasks.map((task) => (
-        <Task key={task.id} task={task} toggleTodo={toggleTodo} deleteTask={deleteTask} />
+        <Task key={task.id} task={task} toggleTask={toggleTask} deleteTask={deleteTask} />
       ))}
     </div>
   );
